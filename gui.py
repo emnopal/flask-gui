@@ -6,7 +6,7 @@ from gui.gui_src import WebUI
 
 app = Flask(__name__)
 
-ui = WebUI(app, debug=True, app_name='Klasifikasi', width=800, height=600)
+ui = WebUI(app, debug=True, app_name='Klasifikasi')
 
 LABEL_PATH = "models/labels.txt"
 class_names_long = get_labels(LABEL_PATH)
