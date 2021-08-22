@@ -2,7 +2,7 @@ from flask import Flask, request, render_template
 from models.predict import get_model_predict, model_predict, \
                            model_path, byte_array_predict,\
                            get_predict, image_predict, get_labels
-from gui.gui_src import WebUI
+from gui.src import WebUI
 
 app = Flask(__name__)
 
