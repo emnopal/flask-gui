@@ -7,3 +7,4 @@ tensorflow
 Werkzeug
 WSGIServer
 PyQt5
+PyQtWebEngine
