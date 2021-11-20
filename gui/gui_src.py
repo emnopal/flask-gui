@@ -12,7 +12,8 @@ default_url = "127.0.0.1"
 
 class WebUI(object):
     def __init__(self, app, url=default_url, port=5000,
-                 debug=False, using_win32=False, icon_path=None, app_name=None):
+                 debug=False, using_win32=False, icon_path=None, app_name=None,
+                 width=None, height=None):
 
         self.flask_app = app
         self.flask_thread = Thread(target=self._run_flask,
