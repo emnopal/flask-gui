@@ -1,2 +1,2 @@
 # Skin Cancer Detection
-Skin Cancer Detection using Tensorflow to Detect and Flask and PyQT5 for Web and Desktop Apps. This app can run both in Desktop and Web
+Skin Lesion Detection using Tensorflow to Detect Lesion and Using Flask as Backend API and PyQT5 as Instance for Web and Desktop Apps. This app can run both in Desktop and Web
