@@ -1,1 +1,1 @@
-from models import Predict
+from models.Predict import Predict

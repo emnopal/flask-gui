@@ -7,4 +7,4 @@ ADD . /app
 WORKDIR /app
 
 EXPOSE 5000
-CMD [ "python" , "run.py", "--mode", "web"]
+CMD gunicorn --worker-class gevent --workers 8 --bind ${APP_HOST}:${APP_PORT} wsgi:app --max-requests 10000 --timeout 5 --keep-alive 5 --log-level info
