@@ -12,11 +12,11 @@ from flask import jsonify
 class Predict:
 
     def __init__(self, model_file='model.h5', label_file='labels.txt'):
-        self.PARENT_PATH = Path(__file__).parent.parent
-        self.MODEL_PATH = self.PARENT_PATH + 'models'
-        self.MODEL = self.MODEL_PATH + model_file
-        self.MODEL_TFLITE = self.MODEL_PATH + model_file.strip('.')[0] + ".tflite"
-        self.LABELS = self.PARENT_PATH + 'models' + label_file
+        self.PARENT_PATH = str(Path(__file__).parent.parent)
+        self.MODEL_PATH = self.PARENT_PATH + '/models'
+        self.MODEL = self.MODEL_PATH + "/" + model_file
+        self.MODEL_TFLITE = self.MODEL_PATH + "/" + model_file.strip('.')[0] + ".tflite"
+        self.LABELS = self.PARENT_PATH + '/models' + "/" +label_file
 
     def __model(self):
         return tf.keras.models.load_model(self.MODEL)
@@ -60,7 +60,15 @@ class Predict:
         label = self.__label()
         probability_prediction = f"{(np.max(predicted))*100:.2f}%"
         class_prediction = label[np.argmax(predicted)]
-        return jsonify(result=class_prediction, probability=probability_prediction)
+        return jsonify({
+            'status': True,
+            'message': 'success',
+            'status_code': 200,
+            'data': {
+                'result': class_prediction,
+                'probability': probability_prediction
+            }
+        })
 
     def h5_to_tflite(self, optimizer=tf.lite.Optimize.OPTIMIZE_FOR_SIZE):
         model = self.__model()
