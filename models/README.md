@@ -1,1 +1,3 @@
-You can put any trained models from TensorFlow/Keras/PyTorch here.
+Put labels and model here. <br>
+
+To generate skin-lesion-detection model please do it manualy in notebook here (since github cannot upload file more than 250 MB).

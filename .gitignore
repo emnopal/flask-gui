@@ -31,7 +31,7 @@ models/*
 !uploads/README.md
 !models/README.md
 !models/*.py
-!models/*.txt
+!models/*.ipynb
 
 *.pyc
 
