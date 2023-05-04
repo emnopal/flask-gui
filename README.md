@@ -1,6 +1,5 @@
 # Skin Lesion Detection
 
-## Purpose
 Thesis Project to Detect and Early Alert of Skin Lesion By Only Using The Image(s). 
 
 ## Technology
